@@ -185,11 +185,26 @@ td.expense {
 .modal {
   background: #f0f2f5;
   padding: 2.4rem;
+  max-width: 500px;
+  width: 90%;
 }
 
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* Form === */
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
 }
 
 /* Footer === */
