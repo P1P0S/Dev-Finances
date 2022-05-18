@@ -95,15 +95,12 @@ const DOM = {
 	},
 
 	updateBalance() {
-		document.getElementById("incomeDisplay").innerHTML = Utils.formatCurrency(
-			Transaction.incomes()
-		);
-		document.getElementById("expenseDisplay").innerHTML = Utils.formatCurrency(
-			Transaction.expenses()
-		);
-		document.getElementById("totalDisplay").innerHTML = Utils.formatCurrency(
-			Transaction.total()
-		);
+		document.getElementById("incomeDisplay").innerHTML =
+			Utils.formatCurrency(Transaction.incomes());
+		document.getElementById("expenseDisplay").innerHTML =
+			Utils.formatCurrency(Transaction.expenses());
+		document.getElementById("totalDisplay").innerHTML =
+			Utils.formatCurrency(Transaction.total());
 	},
 
 	clearTransactions() {
@@ -113,7 +110,7 @@ const DOM = {
 
 const Utils = {
 	formatAmount(value) {
-		value = Number(value.replace(/\,\./g, "")) * 100;
+		value = Number(value.replace(/\\,\./g, "")) * 100;
 
 		return value;
 	},
