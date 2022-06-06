@@ -19,7 +19,7 @@ body {
 
 html {
 	/* regra de 3, (100 * 15) / 16
-    1 rem = 16px (tamanha padrão)
+    1 rem = 16px (tamanho padrão)
   */
 	font-size: 93.7%;
 }
@@ -249,7 +249,7 @@ input {
 	margin-top: 0.8rem;
 }
 
-.input-group small {
+.input-group .help {
 	opacity: 0.4;
 }
 
