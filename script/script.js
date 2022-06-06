@@ -4,29 +4,19 @@ let Modal = {
 	},
 };
 
+// eslint-disable-next-line no-redeclare
+const Storage = {
+	get(){
+		return JSON.parse(localStorage.getItem("transactions")) || [];
+	},
+
+	set(transactions){
+		localStorage.setItem("transactions", JSON.stringify(transactions));
+	}
+};
+
 const Transaction = {
-	all: [
-		{
-			description: "Website",
-			amount: 500000,
-			date: "23/01/2021",
-		},
-		{
-			description: "Luz",
-			amount: -50000,
-			date: "23/01/2021",
-		},
-		{
-			description: "Internet",
-			amount: -20000,
-			date: "23/01/2021",
-		},
-		{
-			description: "App",
-			amount: 500000,
-			date: "30/01/2021",
-		},
-	],
+	all: Storage.get(),
 
 	add(transaction) {
 		Transaction.all.push(transaction);
@@ -195,12 +185,15 @@ const App = {
 		Transaction.all.forEach(DOM.addTransaction);
 
 		DOM.updateBalance();
+
+		Storage.set(Transaction.all);
 	},
 
 	reload() {
 		DOM.clearTransactions();
 		App.init();
 	},
+
 };
 
 App.init();
